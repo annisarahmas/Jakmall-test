@@ -1,0 +1,284 @@
+// app global css
+
+#app
+  font-family Avenir, Helvetica, Arial, sans-serif
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  text-align center
+  color #000000
+
+html
+    padding 30px
+
+body 
+  background-color wheat
+  font-size 16px
+  margin 0
+
+.fa-chevron-right
+    color #ff8a00 !important
+    margin 0 30px
+    transform scale(0.8)
+
+.fa-arrow-left
+    margin-right 10px
+
+.active
+    background-color #ffa800 !important
+    color white !important
+
+.detail
+  position relative
+  padding 25px
+
+.container
+    background-color #ffffff
+    padding 80px 25px 25px
+    border-radius 3px
+
+input[type=text], input[type=number], input[type=email], textarea
+    width 100%
+    margin-bottom 16px
+    border 1px solid #ccc
+    height 40px
+    text-indent 12px
+
+.invalid
+    border-color #ffa800 !important
+
+//PAYMENT
+.button-payment
+    display flex
+    input[type="radio"]
+        opacity 0
+        position fixed
+        width 0
+    label
+        border 1px solid #ccc
+        padding 10px
+        margin 5px
+        width 150px
+        align-items center
+        justify-content space-between
+        color #000000 !important
+        cursor pointer
+        display grid
+
+        &:hover
+            background-color #dfd
+        p
+            margin 0
+            &:first-child
+                font-size 12px
+                margin-bottom 5px
+            &:nth-child(2)
+                font-weight bold
+    input[type="radio"]:checked
+        & + label
+            background-color #dfd
+            border-color #1BD97B
+            &.not-valid
+                border-color #FF8A00
+    .ship-price
+        color #2D2A40
+
+#adr
+    height 80px
+
+label
+    margin-bottom 10px
+    display block
+
+.title
+    color #ff8a00 !important
+    margin 12px 0
+    text-align left
+
+    &.head
+        font-size 36px
+    
+    &.sub-head
+        font-size 24px
+
+.button
+    background-color #ff8a00
+    color white
+    padding 12px
+    margin 10px 0
+    border none
+    width 100%
+    border-radius 3px
+    cursor pointer
+    font-size 16px
+
+    &_dropshipper
+        .checkbox-custom
+            opacity 0
+            position absolute
+            & + .checkbox-custom-label
+                &:before
+                    content ''
+                    background #fff
+                    border 2px solid #1BD97B
+                    display inline-block
+                    vertical-align text-bottom
+                    width 10px
+                    height 10px
+                    padding 2px
+                    margin-right 10px
+                    text-align center
+                
+            &:checked
+                & + .checkbox-custom-label
+                    &:before
+                        content ""
+                        display inline-block
+                        width 1px
+                        height 5px
+                        border solid #1BD97B
+                        border-width 0 3px 3px 0
+                        transform rotate(45deg)
+                        -webkit-transform rotate(45deg)
+                        -ms-transform rotate(45deg)
+                        margin 0px 15px 5px 5px
+
+        .checkbox-custom, .checkbox-custom-label
+            vertical-align middle
+            margin 5px
+            cursor pointer
+
+    &_back-to-cart
+        position absolute
+        left 40px
+        top 20px
+        border none
+        background-color transparent
+        color black !important
+
+a
+    color #FF8A00 !important
+    text-decoration none
+
+p
+    text-align left
+
+hr
+    border 1px solid #D8D8D8
+    width 40%
+    margin 0
+
+span
+    &.price
+        float right
+        color black
+        font-weight bold
+
+.nav-header
+    position absolute
+    top -30px
+    right 0
+    left 0
+    margin auto
+    width 40%
+    display flex
+    align-items center
+    justify-content center
+    background-color #fffae6
+    border-radius 25px
+    height 60px
+
+    .numb
+        background-color wheat
+        border-radius 50%
+        padding 5px 10px
+        margin-right 3px
+        
+        &.active
+            background-color #FF8A00 !important
+            color white !important
+
+.content
+    position relative
+    box-shadow 0px 0px 8px #ccc
+    min-height 550px
+    display flex !important
+
+    &_left
+        width 75%
+        padding 0 25px 0 0
+    
+    &_right
+        width 25%
+        border-left 1px solid wheat
+        padding-left 25px
+        text-align left
+        line-height 17px
+
+        .total-price
+            font-size 24px
+            color #FF8A00
+            font-weight bold
+            .price
+                color #FF8A00
+
+.details-head  
+    display flex
+    align-items center
+    justify-content space-between
+    margin-bottom 30px
+
+.details-body
+    display flex
+    &_details
+        width 60%
+        padding 0 12px 0 0
+    &_dropshipper
+        width 40%
+        padding 0 0 0 12px
+
+.text-danger
+    color red
+    text-align left
+
+@media (max-width: 575px)
+    html
+        padding 0 !important
+    
+    .nav-header
+        height 80px
+
+@media (max-width: 767px)
+    .detail
+        padding 40px 25px !important
+    .fa-chevron-right
+        margin 0 5px !important
+    .button
+        &_back-to-cart
+            left 20px
+    .nav-header
+        width 80%
+        top 50px
+    .content
+        &_left
+            margin-top 60px
+
+@media (max-width: 991px)
+    .col-25 
+        margin-bottom 20px
+    .content
+        &_left, &_right
+            width 100%
+    .details-body
+        &_details, &_dropshipper
+            width 100%
+
+@media (min-width: 992px)
+    .content
+        padding-left 40px
+
+@media (min-width: 992px) and (max-width: 1198px)
+    .content
+        &_left
+            width 60% !important
+        &_right
+            width 40% !important
